@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: 1em/1.6 'Roboto' sans-serif;
+    background: #333;
+    color: #fff;
+}
+
+.slider {
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.7s ease-in-out;
+}
+
+.slide.current {
+    opacity: 1;
+}
+
+.slide .content {
+    position: absolute;
+    bottom: 70px;
+    left: -600px;
+    opacity: 0;
+    width: 500px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+    padding: 1em;
+}
+
+.slide .content h1 {
+    margin-bottom: 0.5em;
+}
+
+.slide.current .content {
+    opacity: 1;
+    transform: translateX(600px);
+    transition: all 0.7s ease-in-out 0.3s;
+}
+
+
+.buttons #next {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+}
+.buttons #prev {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+}
+
+.buttons button {
+    border: 2px solid #fff;
+    border-radius: 50%;
+    padding: 0.8em 1em;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+}
+
+ .buttons button:hover {
+    background: rgb(255, 255, 255); 
+    color: rgb(51, 51, 51);
+}
+
+@media(max-width: 500px) {
+    .slide .content {
+        bottom: -300px;
+        left: 0;
+        width: 100%;
+    }
+
+    .slide.current .content {
+        transform: translateY(-300px);
+    }
+}
+
+.slide:nth-child(1) {
+    background: url('images/slide-one.jpg') no-repeat center center/cover;
+}
+
+.slide:nth-child(2) {
+    background: url('images/slide-two.jpg') no-repeat center center/cover;
+}
+
+.slide:nth-child(3) {
+    background: url('images/slide-three.jpg') no-repeat center center/cover;
+}
+
+.slide:nth-child(4) {
+    background: url('images/slide-four.jpg') no-repeat center center/cover;
+}
+
+.slide:nth-child(5) {
+    background: url('images/slide-five.jpg') no-repeat center center/cover;
+}
+
+.slide:nth-child(6) {
+    background: url('images/slide-six.jpg') no-repeat center center/cover;
+}
